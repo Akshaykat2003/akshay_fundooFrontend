@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Keep</title>
+    <link rel="stylesheet" href="../styles/notesDashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    
+</head>
+<body>
+    <!-- Top Navbar -->
+    <!-- <header class="top-bar">    
+        <div class="logo">
+            <img src="../assets/google_keep.png" alt="Logo" class="logo-img"/>
+            <span class="logo-text">Fundoo</span>
+        </div>
+        <input type="text" class="search-bar" placeholder="Search notes...">
+        <div class="user-logo">A</div>
+    </header> -->
+
+    <header class="top-bar">
+        <div class="logo">
+            <img src="../assets/google_keep.png" alt="Logo" class="logo-img"/>
+            <span class="logo-text">Fundoo</span>
+        </div>
+        <input type="text" class="search-bar" placeholder="Search notes...">
+        
+        <!-- User Logo & Dropdown -->
+        <div class="user-logo-container" onclick="toggleDropdown()">
+            <div class="user-logo">A</div>
+            <div id="dropdownMenu" class="dropdown-menu">
+                <div class="profile-section">
+                    <!-- <div class="profile-pic">A</div> -->
+                    <div class="profile-info">
+                        <p class="user-email">example@email.com</p>
+                        <h3>Hi, User!</h3>
+                    </div>
+                </div>
+                <hr />
+                <div class="dropdown-item" onclick="logout()">Logout</div>
+            </div>
+        </div>
+    </header>
+    
+    
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <ul>
+            <li><i class="fas fa-sticky-note"></i> Notes</li>
+            <li><i class="fas fa-archive"></i> Archives</li>
+            <li><i class="fas fa-trash-alt"></i> Bin</li>
+        </ul>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="content">
+        <!-- Create Note Bar -->
+        <div class="create-note-bar">
+            <div class="textarea-container">
+                <textarea 
+                    placeholder="Take a note..." 
+                    class="create-note-textarea"
+                    id="noteContent"
+                    rows="1" 
+                    onfocus="this.rows=5" 
+                    onblur="this.rows=1"></textarea>
+                <button class="add-note-btn" id="addNoteBtn">Add</button>
+            </div>
+        </div>
+
+        <!-- Notes Section -->
+        <div class="notes-container"></div>
+
+        
+    </main>
+
+    <script src="../js/notesDashboard.js" ></script>
+</body>
+</html>

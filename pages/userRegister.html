@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fundo Registration Page</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../styles/userRegister.css" />
+  </head>
+
+  <body>
+    <div class="card-container">
+      <div class="card shadow">
+        <div class="card-content">
+          <!-- Form Section -->
+          <div class="form-section">
+            <h2 class="brand">Fundo</h2>
+            <p class="form-title">Create your Fundo Account</p>
+
+            <form
+              id="registerForm"
+              action="http://localhost:3000/api/v1/register"
+              method="POST"
+              novalidate
+            >
+              <!-- Full Name Field -->
+              <div class="form-floating mb-3">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="name"
+                  name="name"
+                  placeholder="Full Name"
+                  required
+                />
+                <label for="name">Full Name*</label>
+                <div class="invalid-feedback">Please enter your full name.</div>
+              </div>
+
+              <!-- Email Field -->
+              <div class="form-floating mb-3">
+                <input
+                  type="email"
+                  class="form-control"
+                  id="email"
+                  name="email"
+                  placeholder="Email Address"
+                  required
+                />
+                <label for="email">Email Address*</label>
+                <div class="invalid-feedback">
+                  Please enter a valid email address.
+                </div>
+              </div>
+
+              <!-- Password -->
+              <div class="row mb-3">
+                <div class="col form-floating">
+                  <input
+                    type="password"
+                    class="form-control"
+                    id="password"
+                    name="password"
+                    placeholder="Password"
+                    required
+                    minlength="6"
+                  />
+                  <label for="password">Password*</label>
+                  <div class="invalid-feedback">
+                    Password must be at least 6 characters long.
+                  </div>
+                </div>
+              </div>
+
+              <!-- Phone Number Field -->
+              <div class="form-floating mb-3">
+                <input
+                  type="tel"
+                  class="form-control"
+                  id="phone_no"
+                  name="phone_no"
+                  placeholder="Phone Number"
+                  required
+                  pattern="[0-9]{10}"
+                />
+                <label for="phone_no">Phone Number*</label>
+                <div class="invalid-feedback">
+                  Please enter a valid 10-digit phone number.
+                </div>
+              </div>
+
+              <!-- Buttons Section -->
+              <div class="buttons-section">
+                <a href="userLogin.html" class="signin-link">Sign in instead</a>
+                <button type="submit" class="btn-custom">Register</button>
+              </div>
+            </form>
+          </div>
+
+          <!-- Side Image Section -->
+          <div class="side-image-container">
+            <img
+              src="../assets/register.png"
+              alt="Fundo Logo"
+              class="google-logo"
+            />
+            <p class="side-text">One account. All of Fundo working for you</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/userRegister.js"></script>
+  </body>
+</html>
