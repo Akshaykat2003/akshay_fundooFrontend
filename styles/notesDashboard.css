@@ -1,9 +1,8 @@
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family:'Times New Roman', Times, serif
+    font-family: 'Times New Roman', Times, serif;
 }
 
 body {
@@ -15,47 +14,20 @@ body {
     overflow: hidden;
 }
 
-/* 
+/* Top Bar */
 .top-bar {
     display: flex;
     align-items: center;
+    padding: 10px 20px;
+    background-color: white;
     justify-content: space-between;
-    padding: 1vh 2vw;
-    background-color: #fff;
-    box-shadow: 0 0.1rem 0.3rem rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid #e0e0e0;
     position: fixed;
-    width: 100vw;
+    width: 100%;
     z-index: 10;
-}
-
-
-.logo {
-    display: flex;
-    align-items: center;
-}
-
-.logo-img {
-    width: 4vh;
-    height: 4vh;
-    margin-right: 1vw;
-}
-
-
-.logo-text {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #5f6368;
-} */
-
-
-/* Basic header styles */
-/* Basic header styles */
-.top-bar {
-    display: flex;
-    align-items: center;
-    padding: 10px;
-    background-color: #f1f1f1;
-    justify-content: space-between;
+    top: 0;
+    left: 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .logo {
@@ -67,11 +39,24 @@ body {
     width: 30px;
     margin-right: 10px;
 }
-
+.logo-text{
+    font-size: 30px;
+}
 .search-bar {
-    flex: 1;
+    width: 50vw;
+    height: 8vh;
+    font-size: 1.3em;
     padding: 5px;
-    margin: 0 20px;
+    margin: 0 15px;
+    border: 0.1rem solid #ddd;
+    border-radius: 0.4rem;
+    transition: border 0.2s;
+    background-color: #e2e6eb;
+}
+
+.search-bar:focus {
+    border-color: #ffab00;
+    outline: none;
 }
 
 .user-logo-container {
@@ -124,66 +109,7 @@ body {
     display: block;
 }
 
-.user-logo-container {
-    position: relative;
-    cursor: pointer;
-}
-
-/* .profile-section {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 10px;
-}
-
-.profile-pic {
-    width: 50px;
-    height: 30px;
-    border-radius: 50%;
-    background-color: #ddd;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 30px;
-    color: white;
-    background-color: #4285f4;
-}
- */
-
-
-
-
-.search-bar {
-    flex: 1;
-    max-width: 40vw;
-    margin: 0 2vw;
-    padding: 0.8vh;
-    border: 0.1rem solid #ddd;
-    border-radius: 0.4rem;
-    transition: border 0.2s;
-}
-
-.search-bar:focus {
-    border-color: #ffab00;
-    outline: none;
-}
-
-.user-logo {
-    width: 4vh;
-    height: 4vh;
-    background-color: #ffab00;
-    color: white;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-    font-size: 1.2rem;
-}
-
-/* ===========================
-    Sidebar
-=========================== */
+/* Sidebar */
 .sidebar {
     width: 15vw;
     background-color: #fff;
@@ -194,21 +120,23 @@ body {
     bottom: 0;
     z-index: 5;
     overflow-y: auto;
+    margin-top: 20px;
+
 }
 
 .sidebar ul {
     list-style: none;
-
 }
 
 .sidebar li {
-    margin: 1vh 0;
-    padding: 1vh;
+    margin: 2vh 2vh;
+    padding: 1.2vh;
     font-size: 1.4em;
     font-family: 'Times New Roman', Times, serif;
     border-radius: 0.4rem;
     cursor: pointer;
     transition: background 0.2s;
+    
 }
 
 .sidebar li:hover {
@@ -216,9 +144,7 @@ body {
     border-radius: 20px;
 }
 
-/* ===========================
-    Main Content
-=========================== */
+/* Main Content */
 .content {
     margin-top: 10vh; /* Navbar height */
     margin-left: 16vw; /* Sidebar width */
@@ -227,86 +153,78 @@ body {
     height: calc(100vh - 6vh);
 }
 
-/* ===========================
-    Create Note Bar
-=========================== */
-.create-note-bar {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 40vw;
-    height: 8vh;
-    background-color: #f6efe2;
-    border-radius: 1vh;
-    box-shadow: 0 0.1rem 0.3rem rgba(0, 0, 0, 0.1);
-    margin-bottom: 10vh;
-    transition: all 0.3s;
-    cursor: pointer;
-    margin-left: 30vh;
-    overflow: hidden;
-    padding: 1vh;
-}
-
-/* Expand on Focus */
-.create-note-bar:focus-within {
-    height: 20vh;
-    width: 50vw;
-    box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.2);
+/* Note Input Container */
+.note-input-container {
+    width: 100%;
+    max-width: 40vw;
+    margin: 0 auto 10vh auto;
     background-color: #fff;
-}
-
-/* ===========================
-    Container for Textarea and Button
-=========================== */
-.textarea-container {
-    position: relative;
-    width: 100%;
-    height: 100%;
-}
-
-/* Textarea Styling */
-.create-note-textarea {
-    width: 100%;
-    height: 100%;
-    padding: 1vh 5vh 1vh 1vh; /* Padding for button space */
     border: 0.1rem solid #ddd;
-    border-radius: 0.5vh;
-    resize: none;
-    font-size: 1rem;
-    background-color: #fefefd;
-    box-sizing: border-box;
-    transition: border 0.2s, box-shadow 0.2s;
+    border-radius: 8px;
+    box-shadow: 0 0.1rem 0.3rem rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: all 0.3s ease;
+    position: relative;
 }
 
-.create-note-textarea:focus {
-    border-color: #ffab00;
-    box-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.1);
-    outline: none;
+.note-input-container.expanded {
+    box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.2);
 }
 
-/* Add Button Inside Textarea */
-.add-note-btn {
-    position: absolute;
-    bottom: 1vh;
-    right: 1vh;
-    padding: 0.5vh 1vh;
+.note-title-input, .note-content-input {
+    width: 100%;
     border: none;
-    border-radius: 0.4rem;
-    background-color: #ffab00;
-    color: white;
-    cursor: pointer;
-    transition: background 0.2s, transform 0.1s;
+    padding: 1vh;
+    font-family: 'Times New Roman', Times, serif;
     font-size: 1rem;
+    outline: none;
+    resize: none;
+    background-color: transparent;
 }
 
-.add-note-btn:hover {
-    background-color: #e69100;
-    transform: scale(1.05);
+.note-title-input {
+    display: none; /* Hidden until expanded */
+    font-weight: bold;
 }
 
-/* ===========================
-    Notes Container
-=========================== */
+.note-input-container.expanded .note-title-input {
+    display: block;
+}
+
+.note-content-input {
+    min-height: 6vh; /* Initial height */
+}
+
+.note-input-container.expanded .note-content-input {
+    min-height: 12vh; /* Expanded height */
+}
+
+.note-color-input {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    width: 30px;
+    height: 30px;
+    border: 1px solid #ddd; /* Subtle border for definition */
+    padding: 0;
+    cursor: pointer;
+    background-color: #ceba07; /* Light gray background, matches body */
+    opacity: 0.7;
+    border-radius: 50%; /* Circular shape for a button-like feel */
+    transition: opacity 0.2s, background-color 0.2s, box-shadow 0.2s;
+}
+
+.note-input-container.expanded .note-color-input {
+    opacity: 1;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Slight shadow when expanded */
+}
+
+.note-color-input:hover {
+    background-color: #0866f3; /* Slightly darker on hover */
+    opacity: 1;
+}
+
+/* Notes Container */
 .notes-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -315,105 +233,150 @@ body {
 }
 
 .note {
-    background-color: white;
-    border: 1px solid #ddd;
+    background-color: white; /* Default, overridden by JS if color exists */
     border-radius: 8px;
     padding: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: box-shadow 0.2s;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: relative;
     min-height: 150px;
-}
-
-.note input.note-title {
-    width: 100%;
-    border: none;
-
-    padding: 8px;
-    font-size: 1rem;
-    margin-bottom: 10px;
-    outline: none;
-    font-weight: bold;
-    color: #333;
-}
-.note textarea.note-content {
-    width: 100%;
-    height: 80px;
-    padding: 8px;
-    resize: none;       /* Prevents resizing */
-    font-size: 1rem;
-    outline: none;       /* Removes focus outline */
-    border: none;        /* Removes border */
-    color: #555;
-    background-color: transparent; /* Optional: Transparent background */
-}
-
-.note input::placeholder,
-.note textarea::placeholder {
-    color: #aaa;
-    font-style: italic;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: box-shadow 0.2s;
+    cursor: pointer;
 }
 
 .note:hover {
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-
-.button {
-    padding: 8px 16px;
+/* Note Title and Content */
+.note-title,
+.note-content {
     border: none;
-    border-radius: 5px;
+    width: 100%;
+    outline: none;
+    padding: 5px;
+    background-color: transparent;
     font-size: 14px;
+    color: #333;
+}
+
+.note-title {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+/* Note Toolbar */
+.note-toolbar {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+.note:hover .note-toolbar {
+    opacity: 1;
+}
+
+/* Icon Buttons */
+.icon-button {
+    background: none;
+    border: none;
+    color: #5f6368;
     cursor: pointer;
-    transition: all 0.2s;
-    margin: 5px;
+    padding: 5px;
+    border-radius: 50%;
+    transition: background-color 0.2s;
 }
 
-/* Archive Button */
-.archive-btn {
-    background-color: #4CAF50;
-    color: white;
+.icon-button:hover {
+    background-color: #f1f3f4;
 }
 
-.archive-btn:hover {
-    background-color: #45a049;
-}
-
-/* Unarchive Button */
-.unarchive-btn {
-    background-color: #2196F3;
-    color: white;
-}
-
-.unarchive-btn:hover {
-    background-color: #0b7dda;
-}
-
-
-.trash-btn {
-    background-color: #f44336;
-    color: white;
-}
-
-.trash-btn:hover {
-    background-color: #da190b;
+.icon-button i {
+    font-size: 16px;
 }
 
 
 
+/* ... (Keep all existing styles up to .icon-button) ... */
 
+/* Modal Styles */
+.note-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
 
+.modal-content {
+    background-color: white; /* Overridden by inline style if note.color exists */
+    border-radius: 8px;
+    width: 90%;
+    max-width: 500px;
+    padding: 20px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    position: relative;
+    max-height: 80vh;
+    overflow-y: auto;
+}
 
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
 
+.modal-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #202124;
+    border:none;
+}
 
+.close-modal-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    color: #5f6368;
+    font-size: 1.2rem;
+}
 
+.close-modal-btn:hover {
+    color: #202124;
+}
 
+.modal-body {
+    margin-bottom: 20px;
+}
 
+.modal-content-text {
+    font-size: 1rem;
+    color: #333;
+    white-space: pre-wrap; /* Preserves line breaks */
+    border:none
+}
 
+.modal-toolbar {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
 
-
-
-
-/*Responsive Design*/
+/* Responsive Design */
 @media (max-width: 768px) {
     .sidebar {
         width: 20vw;
@@ -425,9 +388,13 @@ body {
         width: 40vw;
         height: 15vh;
     }
-    .create-note-bar {
-        width: 80vw;
+    .note-input-container {
+        max-width: 80vw;
         margin-left: 5vw;
+    }
+    .modal-content {
+        width: 95%;
+        max-width: 400px;
     }
 }
 
@@ -446,12 +413,12 @@ body {
         width: 80vw;
         height: 20vh;
     }
-    .create-note-bar {
-        width: 90vw;
+    .note-input-container {
+        max-width: 90vw;
         margin-left: 5vw;
     }
+    .modal-content {
+        width: 90%;
+        max-width: 300px;
+    }
 }
-
-
-
-
